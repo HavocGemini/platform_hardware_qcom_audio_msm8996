@@ -400,6 +400,12 @@ static void  update_hardware_info_8996(struct hardware_info *hw_info, const char
         hw_info->snd_devices = (snd_device_t *)tasha_fluid_variant_devices;
         hw_info->num_snd_devices = ARRAY_SIZE(tasha_fluid_variant_devices);
         strlcpy(hw_info->dev_extn, "-fluid", sizeof(hw_info->dev_extn));
+    } else if (!strcmp(snd_card_name, "msm8996-tasha-mtp-snd-card")) {
+        strlcpy(hw_info->type, " mtp", sizeof(hw_info->type));
+        strlcpy(hw_info->name, "msm8996", sizeof(hw_info->name));
+        hw_info->snd_devices = (snd_device_t *)tasha_fluid_variant_devices;
+        hw_info->num_snd_devices = ARRAY_SIZE(tasha_fluid_variant_devices);
+        strlcpy(hw_info->dev_extn, "-mtp", sizeof(hw_info->dev_extn));
     } else if (!strcmp(snd_card_name, "msm8996-tasha-liquid-snd-card")) {
         strlcpy(hw_info->type, " liquid", sizeof(hw_info->type));
         strlcpy(hw_info->name, "msm8996", sizeof(hw_info->name));
