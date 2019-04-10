@@ -70,7 +70,7 @@ LOCAL_MODULE_RELATIVE_PATH := soundfx
 LOCAL_MODULE:= libqcompostprocbundle
 LOCAL_VENDOR_MODULE := true
 
-LOCAL_HEADER_LIBRARIES := generated_kernel_headers
+LOCAL_HEADER_LIBRARIES += generated_kernel_headers
 
 LOCAL_C_INCLUDES := \
         external/tinyalsa/include \
@@ -165,7 +165,7 @@ LOCAL_MODULE_RELATIVE_PATH := soundfx
 LOCAL_MODULE:= libvolumelistener
 LOCAL_VENDOR_MODULE := true
 
-LOCAL_HEADER_LIBRARIES := generated_kernel_headers
+LOCAL_HEADER_LIBRARIES += generated_kernel_headers
 
 LOCAL_C_INCLUDES := \
         $(call project-path-for,qcom-audio)/hal \

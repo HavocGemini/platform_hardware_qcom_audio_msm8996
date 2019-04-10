@@ -492,16 +492,6 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_A2DP_DECODERS)), true)
     LOCAL_CFLAGS += -DAPTX_DECODER_ENABLED
 endif
 
-LOCAL_MODULE := audio.primary.$(TARGET_BOARD_PLATFORM)
-
-LOCAL_MODULE_RELATIVE_PATH := hw
-
-LOCAL_MODULE_TAGS := optional
-
-LOCAL_VENDOR_MODULE := true
-
-include $(BUILD_SHARED_LIBRARY)
-
 LOCAL_CFLAGS += -Wno-unused-variable
 LOCAL_CFLAGS += -Wno-sign-compare
 LOCAL_CFLAGS += -Wno-unused-parameter
@@ -512,5 +502,16 @@ LOCAL_CFLAGS += -Wno-shorten-64-to-32
 LOCAL_CFLAGS += -Wno-tautological-compare
 LOCAL_CFLAGS += -Wno-unused-function
 LOCAL_CFLAGS += -Wno-unused-local-typedef
+LOCAL_CFLAGS += -Wno-implicit-function-declaration
+
+LOCAL_MODULE := audio.primary.$(TARGET_BOARD_PLATFORM)
+
+LOCAL_MODULE_RELATIVE_PATH := hw
+
+LOCAL_MODULE_TAGS := optional
+
+LOCAL_VENDOR_MODULE := true
+
+include $(BUILD_SHARED_LIBRARY)
 
 endif
